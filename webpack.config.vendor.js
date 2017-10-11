@@ -53,7 +53,8 @@ module.exports = ({ prod } = {}) => {
             }),
             new ModuleDependenciesPlugin({
                 "aurelia-syncfusion-bridge": ["./grid/grid", "./grid/column"],
-            })
+            }),
+            new AureliaPlugin({ aureliaApp: undefined })
         ].concat(isDevBuild ? [] : [
             new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
         ])
